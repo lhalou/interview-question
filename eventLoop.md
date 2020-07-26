@@ -41,6 +41,71 @@ new Promise(function(resolve,reject){
 
 node事件循环机制存在libuv引擎当中，其中包括留个阶段。
 ![node环境下时间循环阶段图](https://github.com/lhalou/interview-question/blob/master/node%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E9%98%B6%E6%AE%B5%E5%9B%BE.PNG)
+- timers阶段：setTimeout(),setInterval()
+- poll阶段：进入
+- check阶段：setImmediate()
+- process.nextTick():当前事件队列结束，进入下一个队列之前执行，他不属于任何一个阶段。
+- 一般情况下，setImmediate()一定先于setTimeout()先执行，但是也不一定。当他们出于同一事件机制中，setImmediate()的优先级是高于setTimeout()。也就是说看是先开启eventloop进入poll阶段，还是先执行JS代码进入timers阶段。先进入poll阶段，那接下来执行check阶段，setImmediate()一定先于setTimeout()先执行，先执行JS代码，那么先进入timers阶段，setTimeout()一定先于setImmediate()先执行
+
+## 代码
+
+```
+const fs = require('fs');
+
+fs.readFile(__filename, () => {
+    setTimeout(() => {
+        console.log('timeout');
+    }, 0);
+    setImmediate(() => {
+        console.log('immediate');
+    });
+});
+```
+- 以上代码在同一个事件机制中，那么先进入poll，在进入check，在进入timers,所以打印顺序 immediate timeout
+
+## 总结
+
+```
+console.log('1');
+async function async1() {
+    console.log('2');
+    await async2();
+    console.log('3');
+}
+async function async2() {
+    console.log('4');
+}
+
+process.nextTick(function() {
+    console.log('5');
+})
+
+setTimeout(function() {
+    console.log('6');
+    process.nextTick(function() {
+        console.log('7');
+    })
+    new Promise(function(resolve) {
+        console.log('8');
+        resolve();
+    }).then(function() {
+        console.log('9')
+    })
+})
+
+async1();
+
+new Promise(function(resolve) {
+    console.log('10');
+    resolve();
+}).then(function() {
+    console.log('11');
+});
+console.log('12');
+```
+答案： 1 2 4 10 12 5 3 11 6 8 7 9 
+
+  
 
 
 
