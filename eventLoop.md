@@ -40,7 +40,7 @@ new Promise(function(resolve,reject){
 ## node环境下的事件循环机制
 
 node事件循环机制存在libuv引擎当中，其中包括留个阶段。
-![node环境下时间循环阶段图](/node环境下时间循环阶段图.PNG)
+![node环境下时间循环阶段图](./node环境下时间循环阶段图.PNG)
 
 
 
