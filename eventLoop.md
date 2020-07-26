@@ -40,7 +40,7 @@ new Promise(function(resolve,reject){
 ## node环境下的事件循环机制
 
 node事件循环机制存在libuv引擎当中，其中包括留个阶段。
-![node环境下时间循环阶段图](https://github.com/lhalou/interview-question/blob/master/node%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E9%98%B6%E6%AE%B5%E5%9B%BE.PNG)
+![node环境下时间循环阶段图](https://github.com/lhalou/interview-question/blob/master/images/node%E7%8E%AF%E5%A2%83%E4%B8%8B%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E9%98%B6%E6%AE%B5%E5%9B%BE.PNG)
 - timers阶段：setTimeout(),setInterval()
 - poll阶段：进入
 - check阶段：setImmediate()
