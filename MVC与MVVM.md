@@ -29,5 +29,5 @@ MVC与MVVM都是软件架构的一种设计模式。
 
 ## redux的单向数据流
 
-![redux单向数据流图]()
+![redux单向数据流图](https://github.com/lhalou/interview-question/blob/master/images/redux%E7%9A%84%E5%8D%95%E5%90%91%E6%95%B0%E6%8D%AE%E6%B5%81.PNG)
 
