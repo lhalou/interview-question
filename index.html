@@ -7,20 +7,21 @@
 </head>
 <body>
   <script>
-function debounce(fn,wait = 0){
-  let timerId;
+function throttle(fn,wait = 0){
+  let canUse = true
   return function(){
-    const _this = this
-    if(timerId){window.clearTimeout(timerId)}
-    timerId = setTimeout(() => {
-      fn.apply(_this,arguments)
-      timerId = null
-    },wait)       
-  } 
-} 
-var debounced = debounce(()=>{console.log(1)},2000)
-debounced()
-debounced()
+    if(canUse){
+      fn.apply(this,arguments)
+      canUse = false
+      setTimeout(() => {
+        canUse = true
+      },wait)
+    }
+  }
+}
+let throttled = throttle(() => {console.log(2)},3000)
+throttled()
+throttled()
 
 
   </script>
