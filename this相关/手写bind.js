@@ -8,7 +8,7 @@ Function.prototype.myBind = function(thisArg){
   if(typeof fn !== 'function') return
   function resultFn(){
     let args2 = Array.prototype.slice.call(arguments,0)
-    return fn.call(thisArg,args1.concat(args2))
+    return fn.apply(thisArg,args1.concat(args2))
   }
   resultFn.prototype = fn.prototype
   return resultFn
