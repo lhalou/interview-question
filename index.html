@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+function debounce(fn,wait = 0){
+  let timerId;
+  return function(){
+    const _this = this
+    if(timerId){window.clearTimeout(timerId)}
+    timerId = setTimeout(() => {
+      fn.apply(_this,arguments)
+      timerId = null
+    },wait)       
+  } 
+} 
+var debounced = debounce(()=>{console.log(1)},2000)
+debounced()
+debounced()
+
+
+  </script>
+
+</body>
+</html>
