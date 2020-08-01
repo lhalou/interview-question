@@ -7,7 +7,8 @@
 </head>
 <body>
   <ul>
-    //使用虚拟滚动或requestAnimationFrame.利用文档判断fragment集合requestAnimationFragment。
+    //使用虚拟滚动:只渲染可视区域的内容，非可见区域的那就完全不渲染了，当用户在滚动时实时替换渲染的内容
+    //或requestAnimationFrame.利用文档判断fragment集合requestAnimationFragment。
   </ul>
   <script>
     let ul = document.querySelector('ul')
