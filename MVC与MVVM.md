@@ -17,6 +17,7 @@ MVC与MVVM都是软件架构的一种设计模式。
 - Model：数据层(只有数据)。
 - ViewModel：核心是数据绑定与业务逻辑。通过数据绑定，当model数据发生变化，viewmodel能监听到，viewmodel改变，也能更新model。由于view其实就是虚拟dom的渲染，也就能更新视图。
 - MVVM将view和model的同步逻辑自动化了。视图的渲染通过操作虚拟DOM实现。
+- UI是通过数据驱动的，数据一旦改变就会响应的更新对应的UI,UI如果改变，也会改变对应的数据。这种方式就可以在业务处理中心只关心数据的流转，而无需直接和页面打交道。ViewModel只关心数据和业务的处理，不关心view如何处理数据，这种情况下，View和Model可以单独出来。并且也可以将一些复用的逻辑放在ViewModel中，让多个View复用这个ViewModel。
 
 
 # 数据绑定 
