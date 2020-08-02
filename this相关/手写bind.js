@@ -13,3 +13,5 @@ Function.prototype.myBind = function(thisArg){
   resultFn.prototype = fn.prototype
   return resultFn
 }
+
+//因为f.bind(obj,1)(2)所以需要将两边的参数拼接起来。
