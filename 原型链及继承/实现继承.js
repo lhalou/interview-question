@@ -71,13 +71,4 @@ man.run()
 
 
 
-// 使用new关键字 可以实现继承
 
-// 每个实例对象f1，都有一个__proto__属性，指向他的构造函数f的prototype
-
-var f = function(){}
-f.prototype.sun = '继承'
-var f1 = new f()
-console.log(f1.__proto__ === f.prototype) //true
-console.log(f.prototype)
-console.log(f1.__proto__)
