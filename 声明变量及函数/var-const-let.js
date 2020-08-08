@@ -1,4 +1,4 @@
-// 1. var在全局下声明的变量会被挂载到window上，let和const的不会，及let和const声明的变量不是全局属性
+// 1. var在全局下声明的变量会被挂载到window上，let和const的不会，即let和const声明的变量不是全局属性
 var a = 1;
 let b = 2;
 const c = 3;
@@ -6,7 +6,7 @@ console.log(window.a) // 1
 console.log(window.b) // undefined
 console.log(window.c) // undefined
 
-// 2. var声明的变量存在变量提升，可以先试用在声明，let和const存在临时性死区，不可以先声明在使用
+// 2. var声明的变量存在变量提升，可以先使用在声明，let和const存在临时性死区，不可以先使用在声明
 
 console.log(a)
 var a; // undefined
