@@ -1,5 +1,19 @@
 # 模块化
 
+## 无模块开发
+
+所有的引入使用script标签，并且有依赖关系的必须先引入，否则会报错，页面上就会出现很多script
+```
+    <script src="jquery.js"></script>
+　　<script src="jquery_scroller.js"></script>
+　　<script src="main.js"></script>
+　　<script src="other1.js"></script>
+　　<script src="other2.js"></script>
+　　<script src="other3.js"></script>
+```
+各个引入之间的依赖关系不明显，并且容易造成全局污染，难以维护，所以引入模块化开发是必然的。
+
+
 ## 为什么使用模块化
 
 web应用越来越强大及复杂，代码也越来越冗余，甚至有一些功能重复的代码，依旧需要再写一次。为了解决代码命名冲突，提高代码的可复用性及可维护性，ES2015(ES6)在2015年发布的时候，引入了对模块的原生支持。
