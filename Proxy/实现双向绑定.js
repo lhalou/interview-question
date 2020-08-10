@@ -2,13 +2,6 @@
 // Reflect是一个内置对象，他提供拦截JS操作的基本方法，他不是一个函数对象，因此不可以作为构造函数
 
 let onWatch = (obj,setBind,getLogger) => {
-  function isObject(target) {
-    return  typeof target === 'object' ||  typeof target === 'function' && target!== null
-  }
-  if(!isObject){
-    // 如果是个对象，则返回被代理后的结果，如果不是则直接返回
-     return target;
-  }
   let handler = {
     get(target,property,receiver){
       if(typeof target[property] === 'object' ||  typeof target[property] === 'function' && target[property] !== null){
@@ -32,6 +25,7 @@ let onWatch = (obj,setBind,getLogger) => {
   }
   return new Proxy(obj,handler)
 }
+
 
 let obj = {
   a:1,
