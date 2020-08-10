@@ -61,3 +61,15 @@ function uniq(array){
 var array = [1,2,3,4,5,4,3,2,5,4,1,3,2]
 uniq(array) // [1, 2, 3, 4, 5]
 
+// reduce数组去重
+
+function uniq(array){
+  return array.sort().reduce((acc,current) => {
+    if(acc.length === 0 || acc[acc.length-1] !== current){
+      acc.push(current)
+    }
+    return acc
+  },[])
+}
+let array = [1,2,3,4,5,3,2,4,5,1,5,3,6,7,2]
+uniq(array)
