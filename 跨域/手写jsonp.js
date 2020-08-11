@@ -8,7 +8,7 @@ function jsonp(url,callback,success){
   let script = document.createElement('script')
   script.src = url
   script.type = 'text/javascript'
-  script.async = true
+  script.async = true // script标签添加async属性，表示JS文件下载和解析不会阻塞渲染。
   window[callback] = function(data){
     success && success(data)
   }
