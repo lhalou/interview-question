@@ -20,3 +20,5 @@ function throttle(fn,wait = 0){
 let throttled = throttle(() => {console.log(1)},3000)
 throttled()
 throttled()
+throttled()
+throttled()
