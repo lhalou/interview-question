@@ -16,5 +16,28 @@
 4. 使用diff算法，对新旧的VNODE树进行比较，采用布局更新的方法进行替换
 5. 替换完成，在使用render函数进行页面的渲染。
 
+## 官方文档描述
 
-
+- 使用Key来管理复用的元素。因为Vue会尽可能高效的渲染元素，就会复用已经渲染过的元素，而不是从头开始渲染。
+比如v-if和v-else会复用同一个元素,
+```
+<template v-if="loginType === 'username'">
+  <label>Username</label>
+  <input placeholder="Enter your username">
+</template>
+<template v-else>
+  <label>Email</label>
+  <input placeholder="Enter your email address">
+</template>
+```
+- 解决办法
+```
+<template v-if="loginType === 'username'">
+  <label>Username</label>
+  <input placeholder="Enter your username" key="username-input">
+</template>
+<template v-else>
+  <label>Email</label>
+  <input placeholder="Enter your email address" key="email-input">
+</template>
+```
