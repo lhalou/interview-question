@@ -33,13 +33,13 @@
 ## 是styuls和sass和less的区别
 
 1. 均有"变量"，"混合"，"嵌套"，"继承"，"颜色混合"五大基本特征
-2. saa和less的语法较为严谨，less要求一定要使用"{}"，scs和styuls可以通过缩写表示层级及嵌套关系
+2. sass和less的语法较为严谨，less要求一定要使用"{}"，scs和styuls可以通过缩写表示层级及嵌套关系
 3. scss无全局变量的概念，less和styuls有类似其他语言的作用域概念
 4. sass是基于ruby语言的，而less和styuls是基于nodejs npm下载相应库进行编译
 
 ## css的content属性有什么用
 
-content作用于微元素before/after上，用来插入生成的内容，主要在清楚浮动的时候使用。
+content作用于伪元素before/after上，用来插入生成的内容，在文档结构中无标签显示，但是有可见内容。主要在清除浮动的时候使用。
 
 ##  css动画
 
