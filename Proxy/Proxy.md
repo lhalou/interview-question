@@ -39,7 +39,7 @@
 ##  Proxy实现双向绑定与Object.defineProperty()实现双向绑定的不同
 
 双向数据绑定：在get中收集依赖，在set中派发更新
-1. Object.property()
+1. Object.propertyDefine()
    - 需要深度遍历属性，递归到底
    - 对对象无法监听（使用Vue.set / this.$set）
    - 对数组的操作无法监听（采用底层封装好的splice进行操作）
