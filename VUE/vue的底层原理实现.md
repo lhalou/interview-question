@@ -15,7 +15,7 @@ vue的双向数据绑定原理：ES5的Object.defineProperty()进行数据劫持
 
 ## Observer
 
-- Observer监听数据层的变化，的核心就是Object.definerProperty，这个函数内部可以实现getter和setter函数，当数据对象变化时，就会触发setter函数，此时，Oberver就要通知订阅者Watcher
+- Observer监听数据层的变化，核心就是Object.definerProperty，这个函数内部可以实现getter和setter函数，当数据对象变化时，就会触发setter函数，此时，Oberver就要通知订阅者Watcher
 - Observer的实现思路：遍历data中的对象属性（包括子属性对象上的属性），利用Object.defineProperty()给每一个对象属性添加getter和setter函数。
   ```
   //取出所有对象属性进行遍历
