@@ -4,10 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable = no, initial-scale=1.0, maximum-scale = 1.0,minimum-scale = 1.0">
   <title>Document</title>
- <script>
-    let pageWidth = window.innerWidth
-    document.write(`<style>html {font-size: ${pageWidth / 10}px;}</style>`)
-  </script>
+
   <style>
     .content {
       width: 2.5rem;
@@ -20,6 +17,10 @@
   <div class = "content">
     你好
   </div>
- 
+  <script>
+   //window.innerWidth获取以像素为单位的窗口的内部宽度，如果垂直滚动条存在，这个属性将包括他的宽度
+    let pageWidth = window.innerWidth
+    document.write(`<style>html {font-size: ${pageWidth / 10}px;}</style>`)
+  </script>
 </body>
 </html>

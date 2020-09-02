@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable = no, initial-scale=1.0, maximum-scale = 1.0,minimum-scale = 1.0">
+  <title>Document</title>
+  <style>
+    .box1 {
+      width: 1rem;
+      height: 1rem;
+      background: #ccc;
+    }
+    .box2 {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: red;
+      color: #fff;
+      font-size: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class = "box1"></div>
+    <div class = "box2">
+      Hello World
+      <br/>
+      Good 
+    </div>
+  </div>
+  <script>
+    //clientWidth表示元素内部的宽度
+    document.documentElement.style.fontSize = document.documentElement.clientWidth / 6.4 + 'px'
+  </script>
+</body>
+</html>
