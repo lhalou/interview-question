@@ -96,3 +96,10 @@ window对象代表浏览器的窗口对象，document对象代表文档对象。
 2. 通过HTML5的history.pushstate，来实现浏览器地址栏的无刷新改变。
 
 
+function *foo(x){
+  const y = 2 * (yield(x+1))
+  const z = yield(y / 3)
+  return (x+y+z)
+}
+const a = foo(5)
+a.next()
